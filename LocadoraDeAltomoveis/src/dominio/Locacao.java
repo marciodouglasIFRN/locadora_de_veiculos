@@ -19,6 +19,35 @@ public class Locacao {
 	private double valorDaParcela;
 	private Date dataPagamento;
 	private boolean flPago;
+	private double valorTotal;
+	public Locacao(){
+		
+	}
+	
+	public Locacao(Cliente cliente, Altomovel altomovel,
+			Funcionario funcionario, int id, Date dtIniLocacao,
+			Date dtFimLocacao, int kmInicial, int kmFinal,
+			double valorDaDiaria, int diasDeAtraso, double multaPorDia,
+			String formaDePagamento, int parcela, double valorDaParcela,
+			Date dataPagamento, boolean flPago,double valorTotal) {
+		this.cliente = cliente;
+		this.altomovel = altomovel;
+		this.funcionario = funcionario;
+		this.id = id;
+		this.dtIniLocacao = dtIniLocacao;
+		this.dtFimLocacao = dtFimLocacao;
+		this.kmInicial = kmInicial;
+		this.kmFinal = kmFinal;
+		this.valorDaDiaria = valorDaDiaria;
+		this.diasDeAtraso = diasDeAtraso;
+		this.multaPorDia = multaPorDia;
+		this.formaDePagamento = formaDePagamento;
+		this.parcela = parcela;
+		this.valorDaParcela = valorDaParcela;
+		this.dataPagamento = dataPagamento;
+		this.flPago = flPago;
+		this.valorTotal = valorTotal;
+	}
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -114,6 +143,33 @@ public class Locacao {
 	}
 	public void setFlPago(boolean flPago) {
 		this.flPago = flPago;
-	}	
+	}	 
+	
+	public double getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
+	public void informarCliente(Cliente cliente){
+		this.cliente = cliente;
+	}
+	public void informarAlromovel(Altomovel altomovel){
+		this.altomovel = altomovel;
+	}
+	public void informarFuncionario(Funcionario funcionario){
+		this.funcionario = funcionario;
+	}
+	public void pagar(double valorTotal, int diasDeAtraso, String formaDePagamento,int parcela,double valorDaParcela, Date dtPagamento){
+		this.valorTotal = valorTotal;
+		this.diasDeAtraso = diasDeAtraso;
+		this.formaDePagamento = formaDePagamento;
+		this.parcela = parcela;
+		this.valorDaParcela = valorDaParcela;
+		this.dataPagamento = dtPagamento;
+		this.flPago = true;
+	}
 
 }

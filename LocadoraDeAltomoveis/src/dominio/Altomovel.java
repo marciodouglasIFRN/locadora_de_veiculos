@@ -6,13 +6,34 @@ public class Altomovel {
 	private String modelo;
 	private int ano;
 	private String cor;
-	private double precoDaLocacao;
+	private double valorDiaria;
 	private int portas;
 	private int malas;
 	private int capacidade;
 	private int km;
 	private String descricao; 
 	private boolean flDisponivel;
+	
+	public Altomovel(){
+		
+	}
+	
+	public Altomovel(String placa, String chassi, String modelo, int ano,
+			String cor, double valorDiaria, int portas, int malas,
+			int capacidade, int km, String descricao, boolean flDisponivel) {
+		this.placa = placa;
+		this.chassi = chassi;
+		this.modelo = modelo;
+		this.ano = ano;
+		this.cor = cor;
+		this.valorDiaria = valorDiaria;
+		this.portas = portas;
+		this.malas = malas;
+		this.capacidade = capacidade;
+		this.km = km;
+		this.descricao = descricao;
+		this.flDisponivel = flDisponivel;
+	}
 	public String getPlaca() {
 		return placa;
 	}
@@ -43,11 +64,11 @@ public class Altomovel {
 	public void setCor(String cor) {
 		this.cor = cor;
 	}
-	public double getPrecoDaLocacao() {
-		return precoDaLocacao;
+	public double getValorDiaria() {
+		return valorDiaria;
 	}
-	public void setPrecoDaLocacao(double precoDaLocacao) {
-		this.precoDaLocacao = precoDaLocacao;
+	public void setValorDiaria(double precoDaLocacao) {
+		this.valorDiaria = precoDaLocacao;
 	}
 	public int getPortas() {
 		return portas;
@@ -85,6 +106,14 @@ public class Altomovel {
 	public void setFlDisponivel(boolean flDisponivel) {
 		this.flDisponivel = flDisponivel;
 	}
-	
+	public boolean isDisponivel(){
+		return this.flDisponivel;
+	}
+	public void alugar(boolean alugar){
+		this.flDisponivel = alugar;
+	}
+	public void alterarValorDiaria(double novoValor){
+		this.valorDiaria = novoValor;
+	}
 	
 }

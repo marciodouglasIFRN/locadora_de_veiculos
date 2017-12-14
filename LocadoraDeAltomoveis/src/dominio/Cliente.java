@@ -3,6 +3,7 @@ package dominio;
 import java.sql.Date;
 
 public class Cliente {
+	
 	private String nome;
 	private String cpf;
 	private Date nascimento;
@@ -13,6 +14,24 @@ public class Cliente {
 	private String telefone;
 	private String email;
 	private String endereco;
+	
+	public Cliente(){
+		
+	}
+	public Cliente(String nome, String cpf, Date nascimento, String sexo,
+			String numeroCnh, String tipoCnh, Date vencimentoCnh,
+			String telefone, String email, String endereco) {
+		this.nome = nome;
+		this.cpf = cpf;
+		this.nascimento = nascimento;
+		this.sexo = sexo;
+		this.numeroCnh = numeroCnh;
+		this.tipoCnh = tipoCnh;
+		this.vencimentoCnh = vencimentoCnh;
+		this.telefone = telefone;
+		this.email = email;
+		this.endereco = endereco;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -73,5 +92,16 @@ public class Cliente {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	
+	public boolean equals(Object arg0) {
+		Cliente aComparar = (Cliente) arg0;
+		if(this.cpf == aComparar.cpf){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
 }
